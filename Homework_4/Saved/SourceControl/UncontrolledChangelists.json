@@ -1,0 +1,17 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"E:/IT/Unreal Projects/Skillbox/Homework_4/Content/BP_Exercise.uasset",
+				"E:/IT/Unreal Projects/Skillbox/Homework_4/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset",
+				"E:/IT/Unreal Projects/Skillbox/Homework_4/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/8O/GK06JAEJ82TQ0GA2QB0DJG.uasset",
+				"E:/IT/Unreal Projects/Skillbox/Homework_4/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/XR/SY3A32TJQR3S5MJ8LS3INQ.uasset",
+				"E:/IT/Unreal Projects/Skillbox/Homework_4/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/YO/NG2R9BPZVA7ZDN0Z4VSTG6.uasset",
+				"E:/IT/Unreal Projects/Skillbox/Homework_4/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset"
+			]
+		}
+	]
+}

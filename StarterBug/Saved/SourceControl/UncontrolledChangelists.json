@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"E:/IT/Unreal Projects/Skillbox/StarterBug/Content/BP_Exercise.uasset",
+				"E:/IT/Unreal Projects/Skillbox/StarterBug/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/S3/RAG1ESTQT0Y54MQJ8U5A5M.uasset"
+			]
+		}
+	]
+}

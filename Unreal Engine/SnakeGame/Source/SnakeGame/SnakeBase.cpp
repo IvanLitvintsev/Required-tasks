@@ -4,6 +4,7 @@
 #include "SnakeBase.h"
 #include "SnakeElementBase.h"
 #include "Interactable.h"
+#include "Food.h"
 #include "MyHUD.h"
 #include "BoundaryWall.h"
 
@@ -128,12 +129,27 @@ void ASnakeBase::SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActo
 		if (IInteractableInterface)
 		{
 			IInteractableInterface->Interact(this, bIsFirst);
-		}
-		else if (Other->IsA(ABoundaryWall::StaticClass()))
-		{
-			GameOver();
+
+			// Проверяем, является ли объект едой
+			if (Other->IsA<AFood>())
+			{
+				// Генерируем случайное число от 0 до 1
+				float RandomValue = FMath::FRand();
+				// Если случайное число меньше или равно 0.5 (50% вероятность)
+				if (RandomValue <= 0.5f)
+				{
+					// Увеличиваем скорость змейки в 2 раза
+					ChangeMovementSpeed(2.0f);
+				}
+			}
 		}
 	}
+}
+
+void ASnakeBase::ChangeMovementSpeed(float SpeedMultiplier)
+{
+	MovementSpeed /= SpeedMultiplier;
+	SetActorTickInterval(MovementSpeed);
 }
 
 void ASnakeBase::GameOver()

@@ -62,5 +62,8 @@ public:
 	void SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActor* Other);
 
 	UFUNCTION(BlueprintCallable)
+	void ChangeMovementSpeed(float SpeedMultiplier);
+
+	UFUNCTION(BlueprintCallable)
 	void GameOver();
 };

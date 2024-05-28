@@ -4,6 +4,8 @@
 #include "SnakeBase.h"
 #include "SnakeElementBase.h"
 #include "Interactable.h"
+#include "MyHUD.h"
+#include "BoundaryWall.h"
 
 // Sets default values
 ASnakeBase::ASnakeBase()
@@ -127,6 +129,19 @@ void ASnakeBase::SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActo
 		{
 			IInteractableInterface->Interact(this, bIsFirst);
 		}
+		else if (Other->IsA(ABoundaryWall::StaticClass()))
+		{
+			GameOver();
+		}
 	}
+}
+
+void ASnakeBase::GameOver()
+{
+	if (AMyHUD* MyHUD = Cast<AMyHUD>(GetWorld()->GetFirstPlayerController()->GetHUD()))
+	{
+		MyHUD->ShowGameOverMessage();
+	}
+	Destroy();
 }
 

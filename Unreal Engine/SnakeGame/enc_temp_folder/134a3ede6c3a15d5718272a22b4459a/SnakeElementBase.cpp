@@ -4,7 +4,6 @@
 #include "SnakeElementBase.h"
 #include "Engine/Classes/Components/StaticMeshComponent.h"
 #include "SnakeBase.h"
-#include "BoundaryWall.h"
 
 // Sets default values
 ASnakeElementBase::ASnakeElementBase()
@@ -53,14 +52,6 @@ void ASnakeElementBase::HandleBeginOverlap(UPrimitiveComponent* OverlappedCompon
 {
 	if (IsValid(SnakeOwner))
 	{
-		// Проверка на границу
-		if (OtherActor->IsA(ABoundaryWall::StaticClass()))
-		{
-			SnakeOwner->Destroy();
-			// Здесь можно добавить логику перезапуска игры
-			return;
-		}
-
 		SnakeOwner->SnakeElementOverlap(this, OtherActor);
 	}
 }

@@ -37,29 +37,27 @@ void ASnakeBase::AddSnakeElement(int ElementsNum)
 	{
 		FVector NewLocation;
 
+		// Если у змейки уже есть элементы, добавляем новый элемент позади последнего
 		if (SnakeElements.Num() > 0)
 		{
 			ASnakeElementBase* LastElement = SnakeElements.Last();
 			FVector LastLocation = LastElement->GetActorLocation();
-			FVector DirectionOffset = FVector::ZeroVector;
 
 			switch (LastMoveDirection)
 			{
 			case EMovementDirection::UP:
-				DirectionOffset = FVector(-ElementSize, 0, 0);
+				NewLocation = LastLocation - FVector(ElementSize, 0, 0);
 				break;
 			case EMovementDirection::DOWN:
-				DirectionOffset = FVector(ElementSize, 0, 0);
+				NewLocation = LastLocation + FVector(ElementSize, 0, 0);
 				break;
 			case EMovementDirection::LEFT:
-				DirectionOffset = FVector(0, ElementSize, 0);
+				NewLocation = LastLocation - FVector(0, ElementSize, 0);
 				break;
 			case EMovementDirection::RIGHT:
-				DirectionOffset = FVector(0, -ElementSize, 0);
+				NewLocation = LastLocation + FVector(0, ElementSize, 0);
 				break;
 			}
-
-			NewLocation = LastLocation + DirectionOffset;
 		}
 		else
 		{
